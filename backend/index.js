@@ -12,11 +12,13 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Backend working!', time: new Date() });
 });
 
-// IMPORT PROFILE ROUTES (ADD THIS)
+// IMPORT ROUTES
 const profileRoutes = require('./routes/profileRoutes');
+const interestRoutes = require('./routes/interestRoutes');
 
-// USE PROFILE ROUTES (ADD THIS)
+// USE ROUTES
 app.use('/api/profile', profileRoutes);
+app.use('/api/interest', interestRoutes);
 
 const PORT = process.env.PORT || 5000;
 
